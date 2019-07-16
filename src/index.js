@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () =>{
                 event.target.outerHTML = `<button id="good-dog-filter" data-status="ON">Filter good dogs: ON</button>`
                 document.getElementById('dog-bar').innerHTML = ``
                 fetch('http://localhost:3000/pups').then(resp => resp.json()).then(dogs => {
-                    console.log(dogs)
                     dogs.forEach(dog => {
                     if (dog.isGoodDog === true){
                     document.getElementById('dog-bar').innerHTML += `<span class='dog-span' data-id="${dog.id}">${dog.name}</span>`} 
@@ -77,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () =>{
                 event.target.outerHTML = `<button id="good-dog-filter" data-status="OFF">Filter good dogs: OFF</button>`
                 document.getElementById('dog-bar').innerHTML = ``
                 fetch('http://localhost:3000/pups').then(resp => resp.json()).then(dogs => {
-                    console.log(dogs)
                     dogs.forEach(dog => {
                     document.getElementById('dog-bar').innerHTML += `<span class='dog-span' data-id="${dog.id}">${dog.name}</span>` 
                     })
